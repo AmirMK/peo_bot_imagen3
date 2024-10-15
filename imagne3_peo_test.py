@@ -16,9 +16,9 @@ import json
 logging.basicConfig(level=logging.INFO)
 
 # Retrieve environment variables
-project_id = os.getenv("PROJECT_ID")
-location = os.getenv("LOCATION")
-poe_access_key = os.getenv("POE_ACCESS_KEY")
+project_id = "quora-438213" #os.getenv("PROJECT_ID")
+location = "us-central1" #os.getenv("LOCATION")
+poe_access_key = "YHMXjFFqOqG6TvtPYvEQyjrJAasu871W" #os.getenv("POE_ACCESS_KEY")
 
 # URL to the JSON file
 json_url = "https://storage.googleapis.com/hshhdhfoklhfklhw/quora-438213-e44a345167fc.json"
