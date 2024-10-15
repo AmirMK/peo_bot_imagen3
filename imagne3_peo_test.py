@@ -18,7 +18,22 @@ project_id = os.getenv("PROJECT_ID")
 location = os.getenv("LOCATION")
 poe_access_key = os.getenv("POE_ACCESS_KEY")
 
-credentials, project = load_credentials_from_file('/app/quora-438213-7d3f5b03e504.json')
+# URL to the JSON file
+json_url = "https://raw.githubusercontent.com/AmirMK/peo_bot_imagen3/main/quora-438213-7d3f5b03e504.json"
+
+# Download the JSON file from the URL
+response = requests.get(json_url)
+if response.status_code != 200:
+    raise ValueError(f"Failed to download JSON credentials from {json_url}")
+    
+# Save the JSON file content to a temporary file
+with open('/tmp/credentials.json', 'w') as json_file:
+    json_file.write(response.text)
+
+# Load credentials from the temporary file
+credentials, project = load_credentials_from_file('/tmp/credentials.json')
+
+# credentials, project = load_credentials_from_file('/app/quora-438213-7d3f5b03e504.json')
 
 # Validate required environment variables
 if not project_id:
