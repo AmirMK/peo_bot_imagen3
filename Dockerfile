@@ -20,4 +20,4 @@ ENV GOOGLE_APPLICATION_CREDENTIALS="/app/quora-438213-7d3f5b03e504.json"
 ENV PORT=8080
 
 # Run the application using Uvicorn (ASGI server for FastAPI)
-CMD ["uvicorn", "imagne3_peo_test:app", "--host", "0.0.0.0", "--port", "8080"]
+CMD ["uvicorn", "imagne3_peo_test:app", "--host", "0.0.0.0", "--port", "$PORT"]
