@@ -10,6 +10,7 @@ import vertexai
 import re  
 from google.auth import load_credentials_from_file
 import requests
+import json
 
 # Set up logging to include INFO level messages
 logging.basicConfig(level=logging.INFO)
