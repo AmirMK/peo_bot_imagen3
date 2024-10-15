@@ -38,7 +38,7 @@ with open(file_path, "w") as json_file:
 
 
 # Load credentials from the temporary file
-credentials, project = load_credentials_from_file('./tmp/credentials.json')
+credentials, project = load_credentials_from_file('credentials.json')
 
 # credentials, project = load_credentials_from_file('/app/quora-438213-7d3f5b03e504.json')
 
