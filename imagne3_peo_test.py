@@ -29,7 +29,7 @@ if response.status_code != 200:
     raise ValueError(f"Failed to download JSON credentials from {json_url}")
     
 json_data = json.loads(response.text)
-file_path = "./tmp/credentials.json"
+file_path = "credentials.json"
 
 # Save the dictionary as a JSON file
 with open(file_path, "w") as json_file:
