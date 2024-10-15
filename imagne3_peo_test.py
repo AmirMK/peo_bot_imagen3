@@ -29,7 +29,7 @@ if not poe_access_key:
     raise ValueError("POE_ACCESS_KEY environment variable is not set.")
 
 # Initialize Vertex AI
-vertexai.init(project=project_id, location=location)
+vertexai.init(project=project_id, location=location, credentials=credentials)
 
 # Initialize the image generation model
 image_model = ImageGenerationModel.from_pretrained("imagen-3.0-generate-001")
