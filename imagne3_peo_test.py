@@ -20,7 +20,7 @@ location = os.getenv("LOCATION")
 poe_access_key = os.getenv("POE_ACCESS_KEY")
 
 # URL to the JSON file
-json_url = "https://raw.githubusercontent.com/AmirMK/peo_bot_imagen3/main/quora-438213-7d3f5b03e504.json"
+json_url = "https://storage.cloud.google.com/amir-amir-amir/quora-438213-e44a345167fc.json"
 
 # Download the JSON file from the URL
 response = requests.get(json_url)
