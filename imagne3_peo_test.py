@@ -20,19 +20,24 @@ location = os.getenv("LOCATION")
 poe_access_key = os.getenv("POE_ACCESS_KEY")
 
 # URL to the JSON file
-json_url = "https://storage.cloud.google.com/amir-amir-amir/quora-438213-e44a345167fc.json"
+json_url = "https://storage.googleapis.com/hshhdhfoklhfklhw/quora-438213-e44a345167fc.json"
 
 # Download the JSON file from the URL
 response = requests.get(json_url)
 if response.status_code != 200:
     raise ValueError(f"Failed to download JSON credentials from {json_url}")
     
-# Save the JSON file content to a temporary file
-with open('/tmp/credentials.json', 'w') as json_file:
-    json_file.write(response.text)
+json_data = json.loads(response.text)
+file_path = "./tmp/credentials.json"
+
+# Save the dictionary as a JSON file
+with open(file_path, "w") as json_file:
+    json.dump(json_data, json_file, indent=4)
+
+
 
 # Load credentials from the temporary file
-credentials, project = load_credentials_from_file('/tmp/credentials.json')
+credentials, project = load_credentials_from_file('./tmp/credentials.json')
 
 # credentials, project = load_credentials_from_file('/app/quora-438213-7d3f5b03e504.json')
 
