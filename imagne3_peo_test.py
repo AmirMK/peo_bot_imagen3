@@ -9,6 +9,7 @@ from vertexai.preview.vision_models import ImageGenerationModel
 import vertexai
 import re  
 from google.auth import load_credentials_from_file
+import requests
 
 # Set up logging to include INFO level messages
 logging.basicConfig(level=logging.INFO)
